@@ -1,0 +1,63 @@
+{
+  "runnerClock": "2026-10-02T02:59:46.317Z",
+  "node": "v24.19.0",
+  "type": "jsdom DOM + actual local Hardhat EVM; not a rendered browser",
+  "checks": [
+    {
+      "name": "初始禁用写入，显示实际账户，不伪造回执",
+      "status": "passed"
+    },
+    {
+      "name": "SHA-256计算不发交易",
+      "status": "passed"
+    },
+    {
+      "name": "真实部署，页面显示成功回执",
+      "status": "passed"
+    },
+    {
+      "name": "空白与过长输入被拒绝，不发交易",
+      "status": "passed"
+    },
+    {
+      "name": "双击与同一请求重试只生成一笔真实写交易",
+      "status": "passed"
+    },
+    {
+      "name": "真实回读一致，页面呈现真实性边界",
+      "status": "passed"
+    },
+    {
+      "name": "改一个字使旧结果立即失效，真实回读不一致",
+      "status": "passed"
+    },
+    {
+      "name": "真实停链后立即取消成功验证，禁用链上操作",
+      "status": "passed"
+    },
+    {
+      "name": "新链连接后清空旧回执、旧合约与幂等请求",
+      "status": "passed"
+    },
+    {
+      "name": "新链重新部署、写入、验证完整成功",
+      "status": "passed"
+    },
+    {
+      "name": "HTML字符串作为纯文本，不插入危险元素",
+      "status": "passed"
+    }
+  ],
+  "actualRecord": {
+    "id": 1,
+    "digest": "0xbac5ac75b4a09549d68faa4f2e51f9237602e70cf7ce3fb2a1ac756c0451c7ae",
+    "author": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "timestamp": 1790909988,
+    "transactionHash": "0xf53d5c5dd3adfb323d1c48df5bfc4aa9c6b737eb592706af910e4429ba7cc24f",
+    "blockNumber": 2,
+    "blockHash": "0x14c01b01b1769c4fabc4a312cda46d0d1b01e1cfc165c8778a0f0282a688fb5d",
+    "gasUsed": "112728",
+    "status": "confirmed"
+  },
+  "status": "passed"
+}

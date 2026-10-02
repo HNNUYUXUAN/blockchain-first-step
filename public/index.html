@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>链上第一步 · 本地区块链学习实验</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<header class="header"><a class="brand" href="/" aria-label="链上第一步首页"><span class="brand-mark" aria-hidden="true"></span>链上第一步</a><span class="header-note">本地学习链 · 无真实资产</span></header>
+<main>
+<section class="intro"><h1>让一段文字，留下链上记录</h1><p>不装钱包、不买币。用一条本地学习链，亲手走完账户 → 合约 → 交易 → 验证</p></section>
+<ol class="steps" aria-label="学习进度"><li class="active" data-step="1"><span>1</span>认识账户</li><li data-step="2"><span>2</span>部署合约</li><li data-step="3"><span>3</span>记录摘要</li><li data-step="4"><span>4</span>验证变化</li></ol>
+<div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+<div class="workspace">
+<section class="panel record-panel" aria-labelledby="record-heading">
+<h2 id="record-heading"><span class="section-number">01</span> 你的第一条记录</h2>
+<p class="section-copy">先部署右侧的小合约，再把文字的“指纹”写进去</p>
+<label for="original">想留存的文字</label>
+<textarea id="original" rows="4" spellcheck="false" aria-describedby="input-help original-count">我今天开始学习区块链。</textarea>
+<div class="input-meta"><span id="input-help">保留空格和换行，最多 1,000 个字符</span><span id="original-count">0 / 1000</span></div>
+<label for="digest">SHA-256 摘要 <span class="label-note">固定 32 字节的内容指纹</span></label>
+<output id="digest" class="hash">点击「生成摘要」查看文字指纹</output>
+<div class="actions"><button id="write" class="primary" disabled>写入学习链</button><button id="hash" class="secondary">生成摘要</button></div>
+<p id="write-help" class="small">写入会发出一笔交易，等待区块收录后才算成功</p>
+<aside class="teaching"><h3>上链的是摘要，原文不上链</h3><p>浏览器与本地服务处理原文，服务不把原文写入文件或日志。链上只存摘要、发送地址和时间。摘要不是加密，也不能保证隐私：简单内容可能被猜中。</p></aside>
+</section>
+<aside class="panel chain-panel" aria-labelledby="chain-heading">
+<div class="panel-top"><h2 id="chain-heading">学习链现场</h2><span id="connection" class="connection">正在连接</span></div>
+<div class="chain-facts"><p class="fact-label">公开测试账户 <span class="muted">你的练习身份</span></p><code id="account">等待节点返回真实地址</code><dl><div><dt>链 ID</dt><dd id="chain-id">—</dd></div><div><dt>当前区块</dt><dd id="block">—</dd></div><div><dt>练习余额</dt><dd id="balance">—</dd></div><div><dt>合约地址</dt><dd><code id="contract">尚未部署</code></dd></div></dl></div>
+<p class="small">钱包管理签名身份，地址是公开标识。这次由本地节点代签，使用任何人都知道的测试账户；不代表你已拥有真实钱包。</p>
+<button id="deploy" class="primary wide" disabled>部署学习合约</button><p id="deploy-help" class="small centered">合约是链上按规则执行的小程序，部署也是一笔交易</p>
+<section class="receipt" aria-labelledby="receipt-heading"><h3 id="receipt-heading">最新交易回执</h3><p id="receipt-empty" class="muted">完成部署或写入后，这里显示节点返回的真实数据</p><dl id="receipt-fields" hidden></dl><details id="raw-details" hidden><summary>查看完整链上证据</summary><pre id="raw-receipt"></pre><button id="download" class="text-button">下载本次回执 JSON</button></details></section>
+</aside>
+</div>
+<section class="panel verify-panel" aria-labelledby="verify-heading"><div class="verify-intro"><h2 id="verify-heading"><span class="section-number">02</span> 试着改一个字</h2><p>从合约重新读出摘要，和你现在的文字比较。读取不会发出交易，也不扣练习 Gas。</p></div><div class="verify-grid"><div><label for="record-select">要验证的链上记录</label><select id="record-select" disabled><option value="">先写入第一条记录</option></select><label for="candidate">用于比较的文字</label><textarea id="candidate" rows="2" spellcheck="false" placeholder="写入后自动填入相同文字" disabled></textarea><div class="actions"><button id="verify" class="primary" disabled>从链上读取并验证</button><button id="tamper" class="secondary" disabled>试着改一个字</button></div><p id="verify-help" class="small">相同文字 → 相同摘要；改动一个字、空格或换行，也会得到不同摘要</p></div><div id="comparison" class="comparison" aria-live="polite"><span class="result-symbol" aria-hidden="true">?</span><h3>等待你的第一次验证</h3><p>完成写入，再看看这段文字有没有变化</p></div></div></section>
+<section class="understand"><h2>这次实验，你真正做了什么？</h2><div class="understand-grid"><div><h3>区块链：按顺序记录的账本</h3><p>交易被放进区块，区块带着前一个区块的指纹。本地 EVM 按规则执行合约，产生可回读的状态与回执。</p></div><div><h3>Gas：执行工作的计量</h3><p>部署和写入需要计算与存储，因此消耗 Gas。这里的 ETH 只是练习余额，没有真实价值，也不需要购买。</p></div><div><h3>验证：检查内容是否相同</h3><p>摘要一致不证明内容真实、作者身份或法律效力。公网的共识与安全来自更多机制，本实验没有演示这些。</p></div></div><details><summary>继续理解：本地链、测试网、主网有什么不同？</summary><p>本实验只有你电脑上的一个开发节点，可随时重启清空，不是去中心化公网，也不承诺永久保存。公开测试网由多个节点运行，资产一般没有真实价值，但仍有网络与隐私风险。主网承载真实资产与手续费。本项目不会连接任何公网链。</p></details><details><summary>想用 AI 辅助修改？从这三个小问题开始</summary><ol><li>请解释 contracts 中每一行 Solidity，指出摘要、发送者和时间在哪里写入</li><li>请给界面增加“复制合约地址”，保持本地链限制，并补上浏览器测试</li><li>请说明交易哈希和回执成功有什么区别，引用项目中实际判断成功的代码</li></ol><p>一次只改一个点；先看差异，再运行 npm test。不要让 AI 接入主网、索要私钥或承诺“上链就真实”。完整步骤见 README 和 docs/AI_GUIDE.md。</p></details></section>
+<footer><span>本地可重置的学习实验 · MIT 开源</span><span>刷新页面会清除原文；重启程序会重置本次链</span></footer>
+</main><script type="module" src="/app.js"></script>
+</body></html>

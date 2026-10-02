@@ -1,0 +1,43 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> blockchain-first-step@0.1.0 test:core
+> npm run test:backend && npm run test:dom
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> blockchain-first-step@0.1.0 test:backend
+> node --test tests/backend.test.mjs
+
+✔ initial state connects to a genuine local EVM and rejects records before deployment (1218.682831ms)
+✔ concurrent deployment is single-flight and produces real runtime bytecode and mined receipt (344.746037ms)
+✔ store / chain readback / transaction receipt use exact UTF-8 SHA-256 with no source text retained (109.018209ms)
+✔ verification detects tampering, trailing spaces, and Unicode normalization differences (108.710242ms)
+✔ input limits count Unicode code points; malformed / empty / oversized inputs fail cleanly (91.669325ms)
+✔ concurrent repeated clicks coalesce, retry returns identical receipt, conflicting text is rejected (135.009624ms)
+✔ contract is append-only: different sender can append but cannot overwrite an existing id (101.33824ms)
+✔ same-origin and local-host security boundaries reject cross-site writes and DNS rebinding (89.44253ms)
+✔ chain disconnection reports a recoverable error; fresh chain invalidates stale contract and old request keys (559.457743ms)
+✔ npm-start launcher serves static UI and shuts down both local servers together (1687.237081ms)
+✔ API refuses a local RPC that reports a non-teaching chain id (750.868338ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5669.878356
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> blockchain-first-step@0.1.0 test:dom
+> node --test tests/dom.test.mjs
+
+✔ DOM逻辑 + 真实EVM：完整教学流程、重复点击、篡改、真实停链重启恢复（不验证渲染） (2783.067503ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5391.612051

@@ -1,0 +1,10 @@
+Human-written summary of the observed browser blocker (not a successful runner log)
+
+System Chromium launch failed before opening the application:
+  socket() failed: Operation not permitted
+
+The provided cloud browser also could not navigate to the local prototype:
+  net::ERR_BLOCKED_BY_CLIENT
+
+No security settings were changed. No rendered browser checks or actual UI
+screenshots were completed. See ui-results.json and docs/TEST_REPORT.md.

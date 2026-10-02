@@ -1,0 +1,10 @@
+{
+  "status": "blocked_before_browser_execution",
+  "attempted": true,
+  "passed": false,
+  "checksExecuted": [],
+  "reason": "System Chromium launch rejected by execution environment: socket() failed: Operation not permitted. Cloud browser navigation to local prototype returned net::ERR_BLOCKED_BY_CLIENT.",
+  "screenshotsAvailable": false,
+  "remaining": ["rendered desktop validation", "mobile layout validation", "full browser E2E", "actual UI screenshots"],
+  "alternativeEvidence": "dom-results.json validates DOM events with a real local EVM, not visual rendering"
+}
