@@ -31,7 +31,7 @@ npm ci
 npm start
 ```
 
-4. 看到「学习实验已就绪」后，在浏览器打开 **http://localhost:4173**（或 http://127.0.0.1:4173）
+4. 看到「学习实验已就绪」后，在浏览器打开 [本地学习页面](http://localhost:4173)（备用：[127.0.0.1:4173](http://127.0.0.1:4173)）
 5. 保持终端运行。结束时按 **Ctrl+C**
 
 如果你还没有 Node.js，请从 [Node.js 官方下载页](https://nodejs.org/en/download)选择 Linux 的 Node 24 LTS 安装方式，再回到上述步骤。不要把任意网页提供的未知安装脚本交给 AI 直接执行。
@@ -84,7 +84,7 @@ tests/                   实际节点集成测试和浏览器测试
 docs/AI_GUIDE.md          AI 辅助阅读、修改、验证流程
 docs/ARCHITECTURE.md      数据流、接口与边界
 docs/TEST_REPORT.md       实测记录与局限
-evidence/                实际截图、机器可读测试证据
+evidence/                机器可读测试证据与浏览器阻塞说明
 THIRD_PARTY_NOTICES.md    成熟工具来源与许可说明
 ```
 
